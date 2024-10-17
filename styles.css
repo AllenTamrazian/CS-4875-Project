@@ -1,0 +1,76 @@
+/* General body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for sidebar and main content */
+.container {
+    display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    width: 250px; /* Adjust width as needed */
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Make sidebar fixed on the left */
+    top: 0;
+    left: 0;
+}
+
+.sidebar h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Content Styling */
+.content {
+    margin-left: 270px; /* Create space for the sidebar */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* Module box styling */
+.module {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
