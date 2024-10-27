@@ -3,30 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz 2: Conditionals</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Quiz 2: Variable Types</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h1>Kotlin Tutorial</h1>
-        <ul>
-            <li><a href="index.html#module1">Module 1: Variables</a></li>
-            <li><a href="index.html#module2">Module 2: Conditionals</a></li>
-            <li><a href="index.html#module3">Module 3: Loops</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <h2>Quiz 2: Conditionals</h2>
+    <div class="container">
+        <h2>Quiz 2: Variable Types</h2>
         <div id="quiz-2"></div>
-        <div id="quiz-2-result"></div>
-        <script src="script.js"></script>
-        <script>
-            fetch('quizzes.json')
-                .then(response => response.json())
-                .then(data => {
-                    generateQuiz(data.module2.questions, 'quiz-2');
-                });
-        </script>
+        <div id="quiz-2-result" class="result"></div>
+        <div class="progress-bar-container">
+            <div id="progress-bar-2" class="progress-bar"></div>
+            <nav><a href="index.html">Back to Tutorial</a></nav>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

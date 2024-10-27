@@ -4,43 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kotlin Tutorial</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <h1>Kotlin Tutorial</h1>
             <nav>
                 <ul>
-                    <li><a href="#module1">Module 1: Variables</a></li>
-                    <li><a href="#module2">Module 2: Conditionals</a></li>
-                    <li><a href="#module3">Module 3: Loops</a></li>
+                    <li><a href="#module1">Module 1: Hello World</a></li>
+                    <li><a href="#module2">Module 2: Variable Types</a></li>
+                    <li><a href="#module3">Module 3: String Operations</a></li>
+                    <li><a href="#module4">Module 4: Integer Operations</a></li>
+                    <li><a href="#module5">Module 5: Control Flow</a></li>
+                    <li><a href="#module6">Module 6: Functions and Return Types</a></li>
+                    <li><a href="#module7">Module 7: Classes</a></li>
+                    <li><a href="#module8">Module 8: Inheritance</a></li>
+                    <li><a href="#module9">Module 9: Composition</a></li>
+                    <li><a href="#module10">Module 10: Traits</a></li>
+                    <li><a href="#module11">Module 11: Lambda Expressions</a></li>
+                    <li><a href="#module12">Module 12: Recursion / Tail Recursion</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Main Content Area -->
         <main class="content">
+            <!-- Sections for each module with Try It Yourself and Quiz links -->
             <section id="module1" class="module">
-                <h2>Module 1: Variables and Data Types</h2>
-                <p>In Kotlin, variables can be declared using <code>var</code> or <code>val</code>.</p>
-                <p><a href="try-it-yourself.html">Try It Yourself</a></p>
-                <p><a href="quiz1.html">Quiz 1: Variables</a></p>
+                <h2>Module 1: Hello World</h2>
+                <p>Learn the basics of Kotlin by creating a simple "Hello, World!" program.</p>
+                <p><a href="quiz1.html">Quiz 1: Hello World</a></p>
+                <textarea id="code1" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code1')">Run Code</button>
+                <pre id="output1" class="output"></pre>
             </section>
 
+            <!-- Repeat similar structure for each module -->
             <section id="module2" class="module">
-                <h2>Module 2: Conditionals</h2>
-                <p>Learn how to use conditionals such as <code>if</code> and <code>else</code> in Kotlin.</p>
-                <p><a href="try-it-yourself.html">Try It Yourself</a></p>
-                <p><a href="quiz2.html">Quiz 2: Conditionals</a></p>
+                <h2>Module 2: Variable Types</h2>
+                <p>Understand different variable types in Kotlin and their uses.</p>
+                <p><a href="quiz2.html">Quiz 2: Variable Types</a></p>
+                <textarea id="code2" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code2')">Run Code</button>
+                <pre id="output2" class="output"></pre>
             </section>
 
             <section id="module3" class="module">
-                <h2>Module 3: Loops</h2>
-                <p>Loops are essential for repetitive tasks. Learn about <code>for</code> and <code>while</code> loops.</p>
-                <p><a href="try-it-yourself.html">Try It Yourself</a></p>
-                <p><a href="quiz3.html">Quiz 3: Loops</a></p>
+                <h2>Module 3: String Operations</h2>
+                <p>Learn about operations you can perform on strings in Kotlin.</p>
+                <p><a href="quiz3.html">Quiz 3: String Operations</a></p>
+                <textarea id="code3" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code3')">Run Code</button>
+                <pre id="output3" class="output"></pre>
+            </section>
+
+            <!-- Continue with the same structure up to Module 12 -->
+            <section id="module4" class="module">
+                <h2>Module 4: Integer Operations</h2>
+                <p>Explore arithmetic and other operations on integers in Kotlin.</p>
+                <p><a href="quiz4.html">Quiz 4: Integer Operations</a></p>
+                <textarea id="code4" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code4')">Run Code</button>
+                <pre id="output4" class="output"></pre>
+            </section>
+
+            <section id="module5" class="module">
+                <h2>Module 5: Control Flow</h2>
+                <p>Learn control flow concepts such as if-else, when, and loops.</p>
+                <p><a href="quiz5.html">Quiz 5: Control Flow</a></p>
+                <textarea id="code5" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code5')">Run Code</button>
+                <pre id="output5" class="output"></pre>
+            </section>
+
+            <!-- Modules 6-12 -->
+            <section id="module6" class="module">
+                <h2>Module 6: Functions and Return Types</h2>
+                <p>Understand how to define and use functions in Kotlin, along with return types.</p>
+                <p><a href="quiz6.html">Quiz 6: Functions and Return Types</a></p>
+                <textarea id="code6" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code6')">Run Code</button>
+                <pre id="output6" class="output"></pre>
+            </section>
+
+            <section id="module7" class="module">
+                <h2>Module 7: Classes</h2>
+                <p>Learn the basics of object-oriented programming by creating classes in Kotlin.</p>
+                <p><a href="quiz7.html">Quiz 7: Classes</a></p>
+                <textarea id="code7" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code7')">Run Code</button>
+                <pre id="output7" class="output"></pre>
+            </section>
+
+            <section id="module8" class="module">
+                <h2>Module 8: Inheritance</h2>
+                <p>Explore inheritance concepts and how to extend classes in Kotlin.</p>
+                <p><a href="quiz8.html">Quiz 8: Inheritance</a></p>
+                <textarea id="code8" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code8')">Run Code</button>
+                <pre id="output8" class="output"></pre>
+            </section>
+
+            <section id="module9" class="module">
+                <h2>Module 9: Composition</h2>
+                <p>Learn about composition in Kotlin and how it differs from inheritance.</p>
+                <p><a href="quiz9.html">Quiz 9: Composition</a></p>
+                <textarea id="code9" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code9')">Run Code</button>
+                <pre id="output9" class="output"></pre>
+            </section>
+
+            <section id="module10" class="module">
+                <h2>Module 10: Traits</h2>
+                <p>Understand traits and how they can enhance functionality in Kotlin.</p>
+                <p><a href="quiz10.html">Quiz 10: Traits</a></p>
+                <textarea id="code10" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code10')">Run Code</button>
+                <pre id="output10" class="output"></pre>
+            </section>
+
+            <section id="module11" class="module">
+                <h2>Module 11: Lambda Expressions</h2>
+                <p>Learn how to use lambda expressions to simplify function expressions.</p>
+                <p><a href="quiz11.html">Quiz 11: Lambda Expressions</a></p>
+                <textarea id="code11" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code11')">Run Code</button>
+                <pre id="output11" class="output"></pre>
+            </section>
+
+            <section id="module12" class="module">
+                <h2>Module 12: Recursion / Tail Recursion</h2>
+                <p>Understand recursion and how to apply tail recursion in Kotlin.</p>
+                <p><a href="quiz12.html">Quiz 12: Recursion</a></p>
+                <textarea id="code12" placeholder="Write your Kotlin code here"></textarea>
+                <button onclick="runKotlinCode('code12')">Run Code</button>
+                <pre id="output12" class="output"></pre>
             </section>
         </main>
     </div>
@@ -49,7 +147,6 @@
         <p>&copy; 2024 Kotlin Tutorial</p>
     </footer>
 
-    <script src="https://unpkg.com/kotlin-playground@1"></script>
     <script src="script.js"></script>
 </body>
 </html>

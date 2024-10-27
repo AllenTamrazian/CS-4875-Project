@@ -1,59 +1,101 @@
 {
     "module1": {
         "questions": [
-            {
-                "question": "What keyword is used to declare a mutable variable in Kotlin?",
-                "options": ["var", "val", "const"],
-                "correctAnswer": "var"
-            },
-            {
-                "question": "What keyword is used to declare an immutable variable in Kotlin?",
-                "options": ["var", "val", "final"],
-                "correctAnswer": "val"
-            },
-            {
-                "question": "Which of the following is a valid Kotlin data type?",
-                "options": ["Int", "String", "Both"],
-                "correctAnswer": "Both"
-            }
+            { "question": "What is the purpose of the 'Hello, World!' program?", "options": ["To create a new class", "To print 'Hello, World!' on the screen", "To set up Kotlin environment", "To debug code"], "correctAnswer": "To print 'Hello, World!' on the screen" },
+            { "question": "How do you print in Kotlin?", "options": ["System.out.print()", "print()", "println()", "printf()"], "correctAnswer": "println()" },
+            { "question": "What is the correct syntax for main function?", "options": ["function main() {}", "void main() {}", "fun main() {}", "main() {}"], "correctAnswer": "fun main() {}" },
+            { "question": "Which statement will print 'Hello' in Kotlin?", "options": ["println(Hello)", "print('Hello')", "println(\"Hello\")", "System.out.println('Hello')"], "correctAnswer": "println(\"Hello\")" },
+            { "question": "What does println() do?", "options": ["Prints text on the same line", "Prints text on a new line", "Prints text with error", "Nothing"], "correctAnswer": "Prints text on a new line" }
         ]
     },
     "module2": {
         "questions": [
-            {
-                "question": "What is the correct syntax for an if statement in Kotlin?",
-                "options": ["if condition {}", "if (condition) {}", "if: condition {}"],
-                "correctAnswer": "if (condition) {}"
-            },
-            {
-                "question": "What keyword is used for an else clause in Kotlin?",
-                "options": ["else", "elseif", "otherwise"],
-                "correctAnswer": "else"
-            },
-            {
-                "question": "Which of the following is a valid when expression?",
-                "options": ["when (x) {}", "when x {}", "when: x {}"],
-                "correctAnswer": "when (x) {}"
-            }
+            { "question": "Which function is used to display output without a new line?", "options": ["println()", "print()", "display()", "output()"], "correctAnswer": "print()" },
+            { "question": "What does the println() function do in Kotlin?", "options": ["Prints a message with a new line", "Prints a message on the same line", "Throws an error", "Nothing"], "correctAnswer": "Prints a message with a new line" },
+            { "question": "Which symbol is used for comments in Kotlin?", "options": ["#", "//", "/* */", "<!-- -->"], "correctAnswer": "//" },
+            { "question": "What is the function to display text in Kotlin?", "options": ["show()", "display()", "print()", "write()"], "correctAnswer": "print()" },
+            { "question": "How do you print multiple lines in Kotlin?", "options": ["print()", "println()", "multiPrint()", "linePrint()"], "correctAnswer": "println()" }
         ]
     },
     "module3": {
         "questions": [
-            {
-                "question": "What is the syntax for a for loop in Kotlin?",
-                "options": ["for (i in 1..10)", "for i = 1 to 10", "for (1..10)"],
-                "correctAnswer": "for (i in 1..10)"
-            },
-            {
-                "question": "What type of loop will always execute at least once?",
-                "options": ["for loop", "while loop", "do while loop"],
-                "correctAnswer": "do while loop"
-            },
-            {
-                "question": "Which keyword is used to exit a loop in Kotlin?",
-                "options": ["break", "exit", "return"],
-                "correctAnswer": "break"
-            }
+            { "question": "Which keyword is used to declare a mutable variable?", "options": ["val", "var", "let", "mut"], "correctAnswer": "var" },
+            { "question": "What is a val variable in Kotlin?", "options": ["A mutable variable", "An immutable variable", "A class variable", "A global variable"], "correctAnswer": "An immutable variable" },
+            { "question": "Which of the following can be reassigned?", "options": ["val x", "var x", "let x", "immutable x"], "correctAnswer": "var x" },
+            { "question": "What will happen if you try to reassign a val variable?", "options": ["It will be reassigned", "An error will occur", "It will be ignored", "None of the above"], "correctAnswer": "An error will occur" },
+            { "question": "Which of the following is used to define constants?", "options": ["val", "const", "var", "let"], "correctAnswer": "const" }
+        ]
+    },
+    "module4": {
+        "questions": [
+            { "question": "Which of these is a primitive type in Kotlin?", "options": ["String", "Int", "Class", "Object"], "correctAnswer": "Int" },
+            { "question": "What is the default type for a whole number in Kotlin?", "options": ["Int", "Long", "Short", "Byte"], "correctAnswer": "Int" },
+            { "question": "Which keyword is used to declare a floating-point number?", "options": ["float", "double", "decimal", "var"], "correctAnswer": "double" },
+            { "question": "Which of these represents a decimal type?", "options": ["Int", "Double", "Short", "Byte"], "correctAnswer": "Double" },
+            { "question": "What does 'val' represent?", "options": ["A mutable variable", "A constant", "A class", "A method"], "correctAnswer": "A constant" }
+        ]
+    },
+    "module5": {
+        "questions": [
+            { "question": "Which operator is used to add two numbers?", "options": ["+", "-", "*", "/"], "correctAnswer": "+" },
+            { "question": "What does the '%' operator do?", "options": ["Division", "Addition", "Modulus", "Exponentiation"], "correctAnswer": "Modulus" },
+            { "question": "Which of these is an arithmetic operator?", "options": ["&", "|", "+", "="], "correctAnswer": "+" },
+            { "question": "What is the result of 10 % 3?", "options": ["3", "1", "0", "10"], "correctAnswer": "1" },
+            { "question": "Which of these is not an arithmetic operator?", "options": ["+", "-", "&", "*"], "correctAnswer": "&" }
+        ]
+    },
+    "module6": {
+        "questions": [
+            { "question": "What does 'if' statement do?", "options": ["Executes code based on condition", "Loops code", "Creates a variable", "Defines a function"], "correctAnswer": "Executes code based on condition" },
+            { "question": "What keyword is used to check multiple conditions?", "options": ["else", "elif", "else if", "when"], "correctAnswer": "when" },
+            { "question": "What is an 'else' statement used for?", "options": ["To print text", "To execute code when if fails", "To define a variable", "To return a value"], "correctAnswer": "To execute code when if fails" },
+            { "question": "How do you write an 'if' statement in Kotlin?", "options": ["if (condition)", "if condition", "if [condition]", "if (condition) {}"], "correctAnswer": "if (condition) {}" },
+            { "question": "What keyword handles conditions apart from if?", "options": ["try", "when", "for", "do"], "correctAnswer": "when" }
+        ]
+    },
+    "module7": {
+        "questions": [
+            { "question": "What is the syntax to define a function?", "options": ["define fun()", "def function()", "fun functionName()", "function()"], "correctAnswer": "fun functionName()" },
+            { "question": "How do you call a function?", "options": ["function()", "functionName()", "call functionName()", "execute functionName()"], "correctAnswer": "functionName()" },
+            { "question": "What keyword returns a value in a function?", "options": ["return", "end", "break", "exit"], "correctAnswer": "return" },
+            { "question": "Which keyword declares a function?", "options": ["function", "define", "fun", "let"], "correctAnswer": "fun" },
+            { "question": "What is a parameter in functions?", "options": ["A constant", "A variable passed to a function", "A function return type", "A loop control"], "correctAnswer": "A variable passed to a function" }
+        ]
+    },
+    "module8": {
+        "questions": [
+            { "question": "What keyword is used to define a class?", "options": ["class", "define", "struct", "fun"], "correctAnswer": "class" },
+            { "question": "How do you create an instance of a class?", "options": ["class.new()", "new class()", "ClassName()", "class instantiate"], "correctAnswer": "ClassName()" },
+            { "question": "What is an object in Kotlin?", "options": ["A variable", "A class instance", "A primitive type", "A string"], "correctAnswer": "A class instance" },
+            { "question": "What keyword makes properties private?", "options": ["protected", "public", "var", "private"], "correctAnswer": "private" },
+            { "question": "How do you access a class property?", "options": ["property()", "class.property", "object.property", "this.property"], "correctAnswer": "object.property" }
+        ]
+    },
+    "module9": {
+        "questions": [
+            { "question": "What is inheritance in Kotlin?", "options": ["Reusing a class", "Defining a function", "Declaring a variable", "Looping"], "correctAnswer": "Reusing a class" },
+            { "question": "Which keyword allows inheritance?", "options": ["base", "open", "extend", "inherit"], "correctAnswer": "open" },
+            { "question": "Why might inheritance not be recommended?", "options": ["It limits reusability", "Increases complexity", "Requires a large file", "Reduces readability"], "correctAnswer": "Increases complexity" },
+            { "question": "How do you inherit in Kotlin?", "options": ["extend class", "override class", "open class", "class : SuperClass()"], "correctAnswer": "class : SuperClass()" },
+            { "question": "What does 'override' do?", "options": ["Change variables", "Add properties", "Replace functions in child class", "Remove inheritance"], "correctAnswer": "Replace functions in child class" }
+        ]
+    },
+    "module10": {
+        "questions": [
+            { "question": "What is an interface?", "options": ["Class type", "Abstract type", "Basic data type", "Nothing"], "correctAnswer": "Abstract type" },
+            { "question": "What keyword implements interfaces?", "options": ["inherit", "extend", "interface", "implements"], "correctAnswer": "interface" },
+            { "question": "Which of the following is true for interfaces?", "options": ["Defines class", "Implements functions", "Holds properties only", "Defines method signatures"], "correctAnswer": "Defines method signatures" },
+            { "question": "How is an interface defined?", "options": ["class interface", "define interface", "interface InterfaceName", "fun interface"], "correctAnswer": "interface InterfaceName" },
+            { "question": "What keyword is used for methods in interfaces?", "options": ["public", "interface", "abstract", "open"], "correctAnswer": "abstract" }
+        ]
+    },
+    "module11": {
+        "questions": [
+            { "question": "What is an exception in Kotlin?", "options": ["A variable", "An error", "A class", "A loop"], "correctAnswer": "An error" },
+            { "question": "Which keyword catches exceptions?", "options": ["catch", "try", "error", "fail"], "correctAnswer": "catch" },
+            { "question": "How do you throw an exception?", "options": ["error()", "throw Exception()", "catch()", "return error"], "correctAnswer": "throw Exception()" },
+            { "question": "What is a try block used for?", "options": ["Looping", "Exception handling", "Variable declaration", "Class instantiation"], "correctAnswer": "Exception handling" },
+            { "question": "What happens if an exception isn’t caught?", "options": ["The program stops", "Nothing", "It’s ignored", "An error is returned to the user"], "correctAnswer": "The program stops" }
         ]
     }
 }

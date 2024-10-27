@@ -1,85 +1,97 @@
-// Fetch and load the quiz questions from a JSON file
+// Load quizzes from JSON file
 function loadQuizzes() {
     fetch('quizzes.json')
         .then(response => response.json())
         .then(data => {
-            generateQuiz(data.module1.questions, 'quiz-1');
-            generateQuiz(data.module2.questions, 'quiz-2');
-            generateQuiz(data.module3.questions, 'quiz-3');
+            Object.keys(data).forEach((moduleKey, index) => {
+                generateQuiz(data[moduleKey].questions, `quiz-${index + 1}`);
+            });
         })
         .catch(error => console.error('Error loading quizzes:', error));
 }
 
-// Dynamically generate a quiz based on questions from JSON
+// Dynamically generate quiz questions
 function generateQuiz(questions, quizContainerId) {
     const quizContainer = document.getElementById(quizContainerId);
-    quizContainer.innerHTML = ''; // Clear existing content
+    quizContainer.innerHTML = '';
 
-    questions.forEach((questionData, index) => {
-        // Create a question element
-        const questionElement = document.createElement('div');
-        questionElement.classList.add('question');
-        questionElement.innerHTML = `<h4>${index + 1}. ${questionData.question}</h4>`;
-
-        // Create radio buttons for each option
-        questionData.options.forEach(option => {
+    questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question');
+        questionDiv.innerHTML = `<h4>${index + 1}. ${question.question}</h4>`;
+        
+        question.options.forEach(option => {
             const label = document.createElement('label');
             label.innerHTML = `<input type="radio" name="quiz-${quizContainerId}-${index}" value="${option}"> ${option}`;
-            questionElement.appendChild(label);
-            questionElement.appendChild(document.createElement('br'));
+            questionDiv.appendChild(label);
+            questionDiv.appendChild(document.createElement('br'));
         });
-
-        // Add the question to the quiz container
-        quizContainer.appendChild(questionElement);
+        
+        quizContainer.appendChild(questionDiv);
     });
 
-    // Add a submit button for the quiz
     const submitButton = document.createElement('button');
     submitButton.textContent = 'Submit Quiz';
     submitButton.addEventListener('click', () => checkQuiz(questions, quizContainerId));
     quizContainer.appendChild(submitButton);
+
+    // Add result display and progress bar
+    const resultContainer = document.createElement('div');
+    resultContainer.id = `${quizContainerId}-result`;
+    resultContainer.classList.add('result');
+    quizContainer.appendChild(resultContainer);
+
+    const progressBarContainer = document.createElement('div');
+    progressBarContainer.classList.add('progress-bar-container');
+    const progressBar = document.createElement('div');
+    progressBar.id = `progress-bar-${quizContainerId.split('-')[1]}`;
+    progressBar.classList.add('progress-bar');
+    progressBarContainer.appendChild(progressBar);
+    quizContainer.appendChild(progressBarContainer);
 }
 
-// Check quiz answers and give feedback
+// Check and display quiz results
 function checkQuiz(questions, quizContainerId) {
-    const quizResults = JSON.parse(localStorage.getItem('quizResults')) || {}; // Retrieve stored results or initialize
+    const results = {}; // clear previous results each time a quiz is checked
+    let correctAnswers = 0;
 
-    questions.forEach((questionData, index) => {
+    questions.forEach((question, index) => {
         const selectedAnswer = document.querySelector(`input[name="quiz-${quizContainerId}-${index}"]:checked`);
-        if (selectedAnswer && selectedAnswer.value === questionData.correctAnswer) {
-            alert(`Question ${index + 1}: Correct!`);
-            quizResults[`${quizContainerId}-${index}`] = "Correct";
+        
+        // Debugging line to log correct answer vs selected answer
+        console.log(`Question ${index + 1}: Correct Answer - "${question.correctAnswer}", Selected Answer - "${selectedAnswer ? selectedAnswer.value : "None"}"`);
+        
+        if (selectedAnswer && selectedAnswer.value === question.correctAnswer) {
+            results[`${quizContainerId}-${index}`] = "Correct";
+            correctAnswers++;
         } else {
-            alert(`Question ${index + 1}: Incorrect. Correct answer: ${questionData.correctAnswer}`);
-            quizResults[`${quizContainerId}-${index}`] = "Incorrect";
+            results[`${quizContainerId}-${index}`] = "Incorrect";
         }
     });
 
-    localStorage.setItem('quizResults', JSON.stringify(quizResults)); // Store results
-    displayProgress(quizContainerId); // Update progress display
+    localStorage.setItem('quizResults', JSON.stringify(results));
+    displayProgress(quizContainerId, correctAnswers, questions.length);
 }
 
-// Display user progress based on saved results
-function displayProgress(quizContainerId) {
-    const quizResults = JSON.parse(localStorage.getItem('quizResults')) || {};
+// Display saved quiz progress
+function displayProgress(quizContainerId, correctAnswers, totalQuestions) {
     const resultContainer = document.getElementById(`${quizContainerId}-result`);
-    const resultsForQuiz = Object.keys(quizResults).filter(key => key.startsWith(quizContainerId));
+    resultContainer.innerHTML = `Results: ${correctAnswers} out of ${totalQuestions} correct`;
 
-    if (resultsForQuiz.length) {
-        resultContainer.textContent = 'Your previous results: ' + resultsForQuiz.map(result => quizResults[result]).join(', ');
-    } else {
-        resultContainer.textContent = '';
+    // Update the progress bar
+    const progressBar = document.getElementById(`progress-bar-${quizContainerId.split('-')[1]}`);
+    const progress = (correctAnswers / totalQuestions) * 100;
+    progressBar.style.width = progress + '%';
+}
+
+// Initialize Kotlin Playgrounds
+function initializePlaygrounds() {
+    for (let i = 1; i <= 12; i++) {  // Updated for 12 modules
+        KotlinPlayground(`kotlin-playground-${i}`);
     }
 }
 
-// Initialize Kotlin Playground
-function initializePlaygrounds() {
-    KotlinPlayground('kotlin-playground-1');
-    KotlinPlayground('kotlin-playground-2');
-    KotlinPlayground('kotlin-playground-3');
-}
-
-// Call the load functions on page load
+// Run functions on page load
 window.onload = function() {
     loadQuizzes();
     initializePlaygrounds();

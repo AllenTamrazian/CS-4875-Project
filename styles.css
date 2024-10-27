@@ -64,6 +64,25 @@ body {
     max-width: 800px;
 }
 
+/* Center title and question styles */
+.module h2 {
+    text-align: center; /* Center the module titles */
+}
+
+.question {
+    text-align: center; /* Center the question titles */
+}
+
+.question h4 {
+    margin: 10px 0; /* Space between question and options */
+}
+
+/* Center align quiz options */
+label {
+    display: block; /* Display each option in a block for better spacing */
+    text-align: center; /* Center-align the options */
+}
+
 /* Footer Styling */
 footer {
     background-color: #282c34;
