@@ -56,4 +56,114 @@
             }
         ]
     }
+    "module7": {
+      "questions": [
+        {
+          "question": "How does one make a class that is not an abstract class extendable in Kotlin?",
+          "options": [
+            "No extra keywords are needed: they are extendable by default.",
+            "The open keyword simply needs to be placed before the class keyword to make a class extendable.",
+            "The open keyword needs to be applied both to the class itself and to the methods and properties that one wants to make extendable and overrideable."],
+          "correctAnswer": "The open keyword needs to be applied both to the class itself and to the methods and properties that one wants to make extendable and overrideable."
+        },
+        {
+          "question": "We have a superclass Person: open class Person(open val name : String, open val age : Int).  How do we extend it?",
+          "options": [
+            "class Student(override val name : String, override val age : Int) : Person(name, age)",
+            "class Student(override val name : String, override val age : Int) : Person",
+            "class Student(val name : String, val age : Int) : Person(name, age)"
+          ],
+          "correctAnswer": "class Student(override val name : String, override val age : Int) : Person(name, age)"
+        },
+        {
+          "question": "Which of the following are issues with inheritance?",
+          "options": [
+            "Modifying a single superclass will require changes to the subclasses that inherit from it.",
+            "One needs to manage not only the constructor of the subclasses but also the constructor of the parent class",
+            "Multiple superclasses that have different implementations of properties and methods can conflict with eachother if one subclass inherits from multiple.",
+            "All"
+          ],
+          "correctAnswer": "All."
+        },
+        {
+          "question": "True of False: objects can inherit from classes.",
+          "options": ["True", "False"],
+          "correctAnswer": "True"
+        }
+      ]
+    },
+    "module8": {
+      "questions": [
+        {
+          "question": "What are the benefits of composition?",
+          "options": [
+            "Greater modularity as each component of a class can be managed individually."
+          ],
+          "correctAnswer": "Greater modularity as each component of a class can be managed individually."
+        },
+        {
+          "question": "Which of the following is a downside to composition?",
+          "options": [
+            "As one creates more complex classes, it may become more difficult to test complex classes.",
+            "The initialization of an extremely complex class will require the initialization of its parts.",
+            "None"
+          ],
+          "correctAnswer": "None"
+        },
+        {
+          "question": "With regards to inheritance and composition, what do many industry experts recommend?",
+          "options": [
+            "Abandon all hope with inheritance and switch to composition completely.",
+            "Use inheritance sparingly and only when it would be more efficient to use than composition but avoid creating large class hierarchies."
+          ],
+          "correctAnswer": "Use inheritance sparingly and only when it would be more efficient to use than composition but avoid creating large class hierarchies."
+        }
+      ]
+    },
+    "module9": {
+      "questions": [
+        {
+          "question": "Which of the following is one way to create an interface in Kotlin?",
+          "options": [
+            "interface TraitName",
+            "trait TraitName {}",
+            "trait TraitName"],
+          "correctAnswer": "interface TraitName"
+        },
+        {
+          "question": "What is the purpose of traits?",
+          "options": [
+            "The creation of superclasses without the need for creating constructors",
+            "The defining of common behavior that classes must implement."
+          ],
+          "correctAnswer": "The defining of common behavior that classes must implement."
+        },
+        {
+          "question": "True or false: traits can be extended using other traits?",
+          "options": ["True", "False"],
+          "correctAnswer": "True"
+        },
+        {
+          "question": "Which of the following are benefits of implementing traits?",
+          "options": [
+            "Greater modularity as a superclass can be broken up into multiple traits that can be implemented on an as-needs basis.",
+            "The creation of superclasses without the need for a constructor"
+          ],
+          "correctAnswer": "Greater modularity as a superclass can be broken up into multiple traits that can be implemented on an as-needs basis."
+        },
+        {
+          "question": "True of False: traits lack the diamond problem that inheritance has?",
+          "options": [
+            "True",
+            "False"
+          ],
+          "correctAnswer": "False"
+        },
+        {
+          "question": "True or False: objects can use traits?",
+          "options": ["True", "False"],
+          "correctAnswer": "True"
+        }
+      ]
+    }
 }
