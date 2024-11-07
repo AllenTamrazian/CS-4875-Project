@@ -1,0 +1,59 @@
+{
+    "module1": {
+        "questions": [
+            {
+                "question": "What keyword is used to declare a mutable variable in Kotlin?",
+                "options": ["var", "val", "const"],
+                "correctAnswer": "var"
+            },
+            {
+                "question": "What keyword is used to declare an immutable variable in Kotlin?",
+                "options": ["var", "val", "final"],
+                "correctAnswer": "val"
+            },
+            {
+                "question": "Which of the following is a valid Kotlin data type?",
+                "options": ["Int", "String", "Both"],
+                "correctAnswer": "Both"
+            }
+        ]
+    },
+    "module2": {
+        "questions": [
+            {
+                "question": "What is the correct syntax for an if statement in Kotlin?",
+                "options": ["if condition {}", "if (condition) {}", "if: condition {}"],
+                "correctAnswer": "if (condition) {}"
+            },
+            {
+                "question": "What keyword is used for an else clause in Kotlin?",
+                "options": ["else", "elseif", "otherwise"],
+                "correctAnswer": "else"
+            },
+            {
+                "question": "Which of the following is a valid when expression?",
+                "options": ["when (x) {}", "when x {}", "when: x {}"],
+                "correctAnswer": "when (x) {}"
+            }
+        ]
+    },
+    "module3": {
+        "questions": [
+            {
+                "question": "What is the syntax for a for loop in Kotlin?",
+                "options": ["for (i in 1..10)", "for i = 1 to 10", "for (1..10)"],
+                "correctAnswer": "for (i in 1..10)"
+            },
+            {
+                "question": "What type of loop will always execute at least once?",
+                "options": ["for loop", "while loop", "do while loop"],
+                "correctAnswer": "do while loop"
+            },
+            {
+                "question": "Which keyword is used to exit a loop in Kotlin?",
+                "options": ["break", "exit", "return"],
+                "correctAnswer": "break"
+            }
+        ]
+    }
+}

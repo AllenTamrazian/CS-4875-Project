@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 7 - Classes</title>
+</head>
+<body>
+    <h1>Quiz 7 - Classes</h1>
+    <h4>You must get a 100% on this quiz to move on to the next lesson!</h4>
+    <div id="quiz"></div>
+    <button id="submit" class="submitQuizButton">Submit</button>
+    <div id="results" class="score"></div>
+    <form action="module8.html" id="nextLessonForm" style="display: none;">
+        <input class="quizButton" type="submit" value="Next Lesson"/>
+    </form>
+    <script>
+        var myQuestions = [
+    {
+        question: "What is a class in Kotlin?",
+        answers: {
+            a: "A type of comment in code",
+            b: "A blueprint for creating objects",
+            c: "A function that prints to the console"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Which of the following is the correct syntax for defining a class?",
+        answers: {
+            a: "object ClassName {<br>&emsp;<br>&emsp;&emsp;}",
+            b: "struct ClassName {<br>&emsp;<br>&emsp;&emsp;}",
+            c: "class ClassName {<br>&emsp;<br>&emsp;&emsp;}"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "What is the purpose of properties in a class?",
+        answers: {
+            a: "They are comments for understanding code",
+            b: "They define data that the class can hold",
+            c: "They represent keywords reserved by Kotlin"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Which of the following statements about classes in Kotlin is true?",
+        answers: {
+            a: "Classes cannot have multiple functions with the same name",
+            b: "Properties in a class are private by default",
+            c: "Classes can have properties and functions that are public or private"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "How do you create a new object of a class named `Dog`?",
+        answers: {
+            a: "val myDog = new Dog()",
+            b: "val myDog = Dog()",
+            c: "Dog myDog = Dog()"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What keyword is used to define a class in Kotlin?",
+        answers: {
+            a: "object",
+            b: "struct",
+            c: "class"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "Which of these follows the naming convention for a class in Kotlin?",
+        answers: {
+            a: "dogClass",
+            b: "Dog",
+            c: "DOG"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What is the output of the following code?\n <br> <pre><code>class Dog {<br>&emsp;&emsp;fun bark() {<br>&emsp;&emsp;&emsp;&emsp;println(<q>Woof!</q>)<br>&emsp;&emsp;}<br>}<br><br>fun main() {<br>&emsp;&emsp;val myDog = Dog()<br>&emsp;&emsp;myDog.bark()<br>}</code></pre>",
+        answers: {
+            a: "Bark!",
+            b: "Woof!",
+            c: "Error"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What is the correct way to access a property named <q>age</q> of a Dog object?",
+        answers: {
+            a: "Dog.age",
+            b: "myDog.age",
+            c: "Dog::age"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What does the following line of code do? <br> \n <code>\nval myDog = Dog(\"Fido\", \"Labrador\", 3)</code>",
+        answers: {
+            a: "<span>Creates a Dog object with default properties</span>",
+            b: "Creates a Dog object with specified properties",
+            c: "Creates an error because parameters are missing"
+        },
+        correctAnswer: "b"
+    }
+];
+
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+	function showQuestions(questions, quizContainer){
+		// we'll need a place to store the output and the answer choices
+		var output = [];
+		var answers;
+
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+			
+			// first reset the list of answers
+			answers = [];
+
+			// for each available answer...
+			for(letter in questions[i].answers){
+
+				// ...add an html radio button
+				answers.push( 
+					'<label>'
+						+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+						+ letter + ': '
+						+ questions[i].answers[letter]
+					+ '</label>'
+                    +'<br>'
+				);
+			}
+
+			// add this question and its answers to the output
+			output.push(
+				'<h3 class="question">' + questions[i].question + '</h3>'
+				+ '<div class="answers">' + answers.join('') + '</div>'
+			);
+		}
+
+		// finally combine our output list into one string of html and put it on the page
+		quizContainer.innerHTML = output.join('');
+	}
+
+
+	function showResults(questions, quizContainer, resultsContainer){
+		
+		// gather answer containers from our quiz
+		var answerContainers = quizContainer.querySelectorAll('.answers');
+		
+		// keep track of user's answers
+		var userAnswer = '';
+		var numCorrect = 0;
+		
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+
+			// find selected answer
+			userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+			
+			// if answer is correct
+			if(userAnswer===questions[i].correctAnswer){
+				// add to the number of correct answers
+				numCorrect++;
+				
+				// color the answers green
+				answerContainers[i].style.color = 'lightgreen';
+			}
+			// if answer is wrong or blank
+			else{
+				// color the answers red
+				answerContainers[i].style.color = 'red';
+			}
+		}
+
+		// show number of correct answers out of total
+		resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+        if (numCorrect === 10) {
+            document.getElementById("nextLessonForm").style.display = "block";
+        }
+	}
+
+	// show questions right away
+	showQuestions(questions, quizContainer);
+	
+	// on submit, show results
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+	}
+
+}
+    </script>
+</body>
+</html>
