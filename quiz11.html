@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 11 - Lambda Expressions</title>
+</head>
+<body>
+    <h1>Quiz 7 - Classes</h1>
+    <h4>You must get a 100% on this quiz to move on to the next lesson!</h4>
+    <div id="quiz"></div>
+    <button id="submit" class="submitQuizButton">Submit</button>
+    <div id="results" class="score"></div>
+    <form action="module12.html" id="nextLessonForm" style="display: none;">
+        <input class="quizButton" type="submit" value="Next Lesson"/>
+    </form>
+    <script>
+        var myQuestions = [
+        {
+        question: "What are lambda expressions?",
+        answers: {
+            a: "A method for performing string manipulation",
+            b: "A function that doesn't have a name",
+            c: "A type of variable used for calculations"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "How are lambda expressions used as objects in Kotlin?",
+        answers: {
+            a: "They can only be used within loops",
+            b: "They allow functions to be passed as parameters",
+            c: "They can replace Kotlin’s object syntax"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What is the syntax for creating a lambda expression in Kotlin?",
+        answers: {
+            a: "val name = { value -> value * 2 }",
+            b: "fun name(value) = { value * 2 }",
+            c: "lambda name = { value -> value * 2 }"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What symbols must be included in a lambda expression?",
+        answers: {
+            a: "Colon and semicolon",
+            b: "Brackets and equals sign",
+            c: "Brackets and arrow"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "How do you specify the return type of a lambda expression?",
+        answers: {
+            a: "By using ':' after the lambda name",
+            b: "With '(input types) -> return type' notation",
+            c: "By placing the return type before the lambda"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Can a lambda expression take multiple input parameters?",
+        answers: {
+            a: "Yes, by separating them with commas in the parameter list",
+            b: "No, lambda expressions can only take one input",
+            c: "Only if they are declared inside a class"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What keyword can be used in lambda expressions to represent a single parameter?",
+        answers: {
+            a: "this",
+            b: "val",
+            c: "it"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "How do you call a lambda expression in Kotlin?",
+        answers: {
+            a: "By using the lambda name followed by parentheses and parameters",
+            b: "With a for loop that iterates over each parameter",
+            c: "By adding 'lambda' before the lambda name"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What is an example of a lambda that doubles an integer?",
+        answers: {
+            a: "val double = { num: Int -> num + 2 }",
+            b: "val double = { num: Int -> num * 2 }",
+            c: "val double = { num: Int -> num / 2 }"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What does this lambda expression do? <code>array.forEach { println(it * 4) }</code>",
+        answers: {
+            a: "Prints each item in the array multiplied by 4",
+            b: "Adds 4 to each item in the array",
+            c: "Returns an array with values multiplied by 4"
+        },
+        correctAnswer: "a"
+    }
+];
+
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+	function showQuestions(questions, quizContainer){
+		// we'll need a place to store the output and the answer choices
+		var output = [];
+		var answers;
+
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+			
+			// first reset the list of answers
+			answers = [];
+
+			// for each available answer...
+			for(letter in questions[i].answers){
+
+				// ...add an html radio button
+				answers.push( 
+					'<label>'
+						+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+						+ letter + ': '
+						+ questions[i].answers[letter]
+					+ '</label>'
+                    +'<br>'
+				);
+			}
+
+			// add this question and its answers to the output
+			output.push(
+				'<h3 class="question">' + questions[i].question + '</h3>'
+				+ '<div class="answers">' + answers.join('') + '</div>'
+			);
+		}
+
+		// finally combine our output list into one string of html and put it on the page
+		quizContainer.innerHTML = output.join('');
+	}
+
+
+	function showResults(questions, quizContainer, resultsContainer){
+		
+		// gather answer containers from our quiz
+		var answerContainers = quizContainer.querySelectorAll('.answers');
+		
+		// keep track of user's answers
+		var userAnswer = '';
+		var numCorrect = 0;
+		
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+
+			// find selected answer
+			userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+			
+			// if answer is correct
+			if(userAnswer===questions[i].correctAnswer){
+				// add to the number of correct answers
+				numCorrect++;
+				
+				// color the answers green
+				answerContainers[i].style.color = 'lightgreen';
+			}
+			// if answer is wrong or blank
+			else{
+				// color the answers red
+				answerContainers[i].style.color = 'red';
+			}
+		}
+
+		// show number of correct answers out of total
+		resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+        if (numCorrect === 10) {
+            document.getElementById("nextLessonForm").style.display = "block";
+        }
+	}
+
+	// show questions right away
+	showQuestions(questions, quizContainer);
+	
+	// on submit, show results
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+	}
+
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 11 - Lambda Expressions</title>
+    <h1>Module 11 - Lambda Expressions</h1>
+    <div>
+        <h2>Introduction</h2>
+        <p>So, let&apos;s say that you want to do a simple operation on a list. You could use a for loop, covered in the Functions lesson, or we could do it in a much simpler way using something called lambda expressions. Lambda expressions are basically like functions that don&apos;t have a name and don&apos;t look like typical functions with the block format. Lambda expressions also can be treated as a normal object, which lets use do things such as pass them as input parameters, return them, and much more. </p>
+    </div>
+    <div>
+        <h2>Syntax</h2>
+        <p>A lambda expression is created/initialized  the same way as other parameter types in Kotlin with <code>val &lt;name&gt;</code>. To set the lambda expression, we write:</p>
+        <iframe src="https://pl.kotl.in/4s7sbNF9I?readOnly=true"></iframe>
+        <p>Note: The brackets and arrow <code>-></code> must be present in the lambda expression to be valid. This explanation might be a little word heavy, but seeing some examples will make the idea of lambda expressions more understandable.</p>
+        <br>
+        <p>There are times when we want to tell Kotlin what type we want to return. We would do that using a similar format:</p>
+        <iframe src="https://pl.kotl.in/3w00PdwTG?readOnly=true"></iframe>
+        <p>Note: Kotlin can accept multiple values as an input for a lambda expression. We would have the types in the <code>(&lt;valueToModify input types&gt;)</code> separated by commas. We would also add the values that we want to modify in <code>&lt;valuesToModify&gt;</code>. Again, this will make sense in the example below.</p>
+        <br>
+        <p>We can even use other functions and operations in lambda expressions such as loops and statements. Do not worry about how this is done if you are doing more complicated operations like loops and statements, you should use a normal function.</p>
+        <br>
+        <p>We can use lambda expressions to go through all values in an array or list. We would do this:</p>
+        <iframe src="https://pl.kotl.in/ObI-yJ24h?readOnly=true"></iframe>
+        <br>
+        <p>We can also do this in a much simpler way using <code>it</code>. We wouldn&apos;t need to specify the value that we want to modify and have the arrow. We could just do this instead:</p>
+        <iframe src="https://pl.kotl.in/qtEzlyege?readOnly=true"></iframe>
+        <br>
+        <p>So, how would we use/call a lambda expression? We would use/call a lambda expression the same way as a normal function. We would have the name and the input parameters, just like a normal function.</p>
+    </div>
+    <div>
+        <h2>Examples</h2>
+        <p>Let&apos;s say we wanted to make a lambda function to double a number. We would make this lambda function:</p>
+        <iframe src="https://pl.kotl.in/uheJwjBfi"></iframe>
+        <p>We create a lambda function named double. We want the function to get an input parameter called number that is an Int value. Then, we then apply operations to number normally as we mentioned before. The questions we should be asking are:</p>
+        <ul>
+            <li>What is the name? (double in this example)</li>
+            <li>What value do we want to modify? (number in this example)</li>
+            <li>What type is the value do we want to modify? (Int in this example)</li>
+            <li>What operation are we going to do? (We want to double number in this example)</li>
+            <li>How will we do the operation (what will also be returned)? (number*2 in this example)</li>
+        </ul>
+        <br>
+        <p>We can put multiple operations in one lambda function. Here is an example that multiplies a value by 100 and turns it into a string.</p>
+        <iframe src="https://pl.kotl.in/UQ8YZgXPP"></iframe>
+        <p>Note: In this example, Kotlin will understand that we will return a string. </p>
+        <br>
+        <p>Note: In this example, Kotlin will understand that we will return a string. </p>
+        <iframe src="https://pl.kotl.in/D3sQoztnc"></iframe>
+        <br>
+        <p>Here is an example of use using two input parameters to combine a string and integer:</p>
+        <iframe src="https://pl.kotl.in/MbclCxlYq"></iframe>
+        <br>
+        <p>Here&apos;s how we would go through an array/list and modify the items using the longhand way:</p>
+        <iframe src="https://pl.kotl.in/U6LA0To79"></iframe>
+        <p>Here&apos;s how we would go through an array/list and modify the items using the shorthand way:</p>
+        <iframe src="https://pl.kotl.in/D4sIkea3r"></iframe>
+    </div>
+    <form action="quiz11.html">
+        <input class = "quizButton" type="submit" value="Go to quiz"/>
+    </form>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,1 +1,206 @@
-//ask about confrobility of the subject koitlin//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 7 - Classes</title>
+</head>
+<body>
+    <h1>Quiz 7 - Classes</h1>
+    <h4>You must get a 100% on this quiz to move on to the next lesson!</h4>
+    <div id="quiz"></div>
+    <button id="submit" class="submitQuizButton">Submit</button>
+    <div id="results" class="score"></div>
+    <form action="#finish page" id="nextLessonForm" style="display: none;">
+        <input class="quizButton" type="submit" value="Next Lesson"/>
+    </form>
+    <script>
+        var myQuestions = [
+        {
+        question: "What is recursion?",
+        answers: {
+            a: "A process where a function calls itself",
+            b: "A method to store data in an array",
+            c: "A type of loop that iterates over a list"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What is the base case in recursion?",
+        answers: {
+            a: "The starting point of a recursive function",
+            b: "A condition that stops the recursive calls",
+            c: "A function that multiplies numbers"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "How do you declare a recursive function in Kotlin?",
+        answers: {
+            a: "By using a for loop inside the function",
+            b: "By calling the function within itself",
+            c: "With a 'rec' keyword"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Why is a base case important in recursion?",
+        answers: {
+            a: "It ensures the function completes and prevents infinite loops",
+            b: "It specifies the function's return type",
+            c: "It initializes the function parameters"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "How is the return type of a recursive function defined?",
+        answers: {
+            a: "Like any normal function return type",
+            b: "By using 'rec' before the return type",
+            c: "The return type is not specified for recursive functions"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What happens if no base case is defined in a recursive function?",
+        answers: {
+            a: "The function will throw a syntax error",
+            b: "The function will continue to call itself infinitely",
+            c: "The function will stop automatically after 10 iterations"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "How can recursion be used to calculate a factorial?",
+        answers: {
+            a: "By repeatedly subtracting 1 until reaching 0",
+            b: "By multiplying the number with the result of the function call on (n - 1)",
+            c: "By adding each number up to the factorial"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What is the base case in a recursive factorial function?",
+        answers: {
+            a: "When n <= 1",
+            b: "When n is an odd number",
+            c: "When n is less than 10"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What is the Fibonacci sequence?",
+        answers: {
+            a: "A sequence of even numbers",
+            b: "A series of numbers where each number is the sum of the previous two",
+            c: "A series of numbers where each number is multiplied by 2"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "What is the purpose of the recursive step in the Fibonacci function?",
+        answers: {
+            a: "To sum up all previous values",
+            b: "To add the results of (n - 1) and (n - 2)",
+            c: "To multiply each number by 2"
+        },
+        correctAnswer: "b"
+    }
+];
+
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+	function showQuestions(questions, quizContainer){
+		// we'll need a place to store the output and the answer choices
+		var output = [];
+		var answers;
+
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+			
+			// first reset the list of answers
+			answers = [];
+
+			// for each available answer...
+			for(letter in questions[i].answers){
+
+				// ...add an html radio button
+				answers.push( 
+					'<label>'
+						+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+						+ letter + ': '
+						+ questions[i].answers[letter]
+					+ '</label>'
+                    +'<br>'
+				);
+			}
+
+			// add this question and its answers to the output
+			output.push(
+				'<h3 class="question">' + questions[i].question + '</h3>'
+				+ '<div class="answers">' + answers.join('') + '</div>'
+			);
+		}
+
+		// finally combine our output list into one string of html and put it on the page
+		quizContainer.innerHTML = output.join('');
+	}
+
+
+	function showResults(questions, quizContainer, resultsContainer){
+		
+		// gather answer containers from our quiz
+		var answerContainers = quizContainer.querySelectorAll('.answers');
+		
+		// keep track of user's answers
+		var userAnswer = '';
+		var numCorrect = 0;
+		
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+
+			// find selected answer
+			userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+			
+			// if answer is correct
+			if(userAnswer===questions[i].correctAnswer){
+				// add to the number of correct answers
+				numCorrect++;
+				
+				// color the answers green
+				answerContainers[i].style.color = 'lightgreen';
+			}
+			// if answer is wrong or blank
+			else{
+				// color the answers red
+				answerContainers[i].style.color = 'red';
+			}
+		}
+
+		// show number of correct answers out of total
+		resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+        if (numCorrect === 10) {
+            document.getElementById("nextLessonForm").style.display = "block";
+        }
+	}
+
+	// show questions right away
+	showQuestions(questions, quizContainer);
+	
+	// on submit, show results
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+	}
+
+}
+    </script>
+</body>
+</html>
