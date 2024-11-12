@@ -70,7 +70,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    
     bottom: 0;
     width: 100%;
 }
@@ -169,3 +169,25 @@ input[type="radio"]:checked {
     padding: 5px;
     margin: 20px;
 }
+a:link {
+    color: #9D4EE8;
+    font-weight: bold;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #9D4EE8;
+    font-weight: bold;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #9D4EE8;
+    font-weight: bold;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #9D4EE8;
+    font-weight: bold;
+  }
