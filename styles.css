@@ -70,7 +70,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    
     bottom: 0;
     width: 100%;
 }
@@ -191,3 +190,29 @@ a:link {
     color: #9D4EE8;
     font-weight: bold;
   }
+  .back-to-main {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    color: #4a90e2; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    border: 2px solid #9D4EE8; /* Outline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    text-align: center;
+    width: 200px;
+}
+
+.back-to-main:hover {
+    background-color: #9D4EE8; /* Background on hover */
+    color: white; /* Change text color on hover */
+}
+
+.back-to-main:active {
+    background-color: #2a5f9a; /* Darker background when clicked */
+    border-color: #2a5f9a; /* Match border color to background */
+}
+.finishtext {
+    font-size: 25px;
+}
