@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz 4: Integer Operations</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="sidebar">
+        <h1>Kotlin Tutorial</h1>
+        <ul>
+            <li><a href="index.html#module4">Module 4: Integer Operations</a></li>
+            <li><a href="index.html#module5">Module 5: Control Flow</a></li>
+            <li><a href="index.html#module6">Module 6: Functions and Return Types</a></li>
+        </ul>
+    </div>
+    <div class="content">
         <h2>Quiz 4: Integer Operations</h2>
         <div id="quiz-4"></div>
-        <div id="quiz-4-result" class="result"></div>
-        <div class="progress-bar-container">
-            <div id="progress-bar-4" class="progress-bar"></div>
-            <nav><a href="index.html">Back to Tutorial</a></nav>
-        </div>
+        <div id="quiz-4-result"></div>
+        <script src="script.js"></script>
+        <script>
+            // Load only the quiz related to Module 4
+            fetch('quizzes.json')
+                .then(response => response.json())
+                .then(data => {
+                    generateQuiz(data.module4.questions, 'quiz-4');
+                });
+        </script>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

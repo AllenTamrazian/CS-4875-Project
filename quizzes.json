@@ -1,61 +1,223 @@
 {
-    "module1": {
-        "questions": [
-            {
-                "question": "What keyword is used to declare a mutable variable in Kotlin?",
-                "options": ["var", "val", "const"],
-                "correctAnswer": "var"
-            },
-            {
-                "question": "What keyword is used to declare an immutable variable in Kotlin?",
-                "options": ["var", "val", "final"],
-                "correctAnswer": "val"
-            },
-            {
-                "question": "Which of the following is a valid Kotlin data type?",
-                "options": ["Int", "String", "Both"],
-                "correctAnswer": "Both"
-            }
-        ]
-    },
-    "module2": {
-        "questions": [
-            {
-                "question": "What is the correct syntax for an if statement in Kotlin?",
-                "options": ["if condition {}", "if (condition) {}", "if: condition {}"],
-                "correctAnswer": "if (condition) {}"
-            },
-            {
-                "question": "What keyword is used for an else clause in Kotlin?",
-                "options": ["else", "elseif", "otherwise"],
-                "correctAnswer": "else"
-            },
-            {
-                "question": "Which of the following is a valid when expression?",
-                "options": ["when (x) {}", "when x {}", "when: x {}"],
-                "correctAnswer": "when (x) {}"
-            }
-        ]
-    },
-    "module3": {
-        "questions": [
-            {
-                "question": "What is the syntax for a for loop in Kotlin?",
-                "options": ["for (i in 1..10)", "for i = 1 to 10", "for (1..10)"],
-                "correctAnswer": "for (i in 1..10)"
-            },
-            {
-                "question": "What type of loop will always execute at least once?",
-                "options": ["for loop", "while loop", "do while loop"],
-                "correctAnswer": "do while loop"
-            },
-            {
-                "question": "Which keyword is used to exit a loop in Kotlin?",
-                "options": ["break", "exit", "return"],
-                "correctAnswer": "break"
-            }
-        ]
-    }
+  "module1": {
+      "questions": [
+          {
+              "question": "What keyword is used to declare a mutable variable in Kotlin?",
+              "options": ["var", "val", "const"],
+              "correctAnswer": "var"
+          },
+          {
+              "question": "What keyword is used to declare an immutable variable in Kotlin?",
+              "options": ["var", "val", "final"],
+              "correctAnswer": "val"
+          },
+          {
+              "question": "Which of the following is a valid Kotlin data type?",
+              "options": ["Int", "String", "Both"],
+              "correctAnswer": "Both"
+          }
+      ]
+  },
+  "module2": {
+      "questions": [
+          {
+              "question": "What is the correct syntax for an if statement in Kotlin?",
+              "options": ["if condition {}", "if (condition) {}", "if: condition {}"],
+              "correctAnswer": "if (condition) {}"
+          },
+          {
+              "question": "What keyword is used for an else clause in Kotlin?",
+              "options": ["else", "elseif", "otherwise"],
+              "correctAnswer": "else"
+          },
+          {
+              "question": "Which of the following is a valid when expression?",
+              "options": ["when (x) {}", "when x {}", "when: x {}"],
+              "correctAnswer": "when (x) {}"
+          }
+      ]
+  },
+  "module3": {
+      "questions": [
+          {
+              "question": "What is the syntax for a for loop in Kotlin?",
+              "options": ["for (i in 1..10)", "for i = 1 to 10", "for (1..10)"],
+              "correctAnswer": "for (i in 1..10)"
+          },
+          {
+              "question": "What type of loop will always execute at least once?",
+              "options": ["for loop", "while loop", "do while loop"],
+              "correctAnswer": "do while loop"
+          },
+          {
+              "question": "Which keyword is used to exit a loop in Kotlin?",
+              "options": ["break", "exit", "return"],
+              "correctAnswer": "break"
+          }
+      ]
+  },
+  "module4": {
+      "questions": [
+          {
+              "question": "What is the result of 5 + 3?",
+              "options": ["5", "8", "9"],
+              "correctAnswer": "8"
+          },
+          {
+              "question": "What operator is used for multiplication in Kotlin?",
+              "options": ["*", "/", "+"],
+              "correctAnswer": "*"
+          },
+          {
+              "question": "What is the remainder when 10 is divided by 3?",
+              "options": ["1", "2", "0"],
+              "correctAnswer": "1"
+          },
+          {
+              "question": "Which operation subtracts 7 from 15 in Kotlin?",
+              "options": ["15 - 7", "7 - 15", "15 * 7"],
+              "correctAnswer": "15 - 7"
+          },
+          {
+              "question": "If a = 10 and b = 5, what is the result of a * b?",
+              "options": ["15", "50", "5"],
+              "correctAnswer": "50"
+          },
+          {
+              "question": "Which operator is used to calculate the remainder of a division?",
+              "options": ["%", "/", "*"],
+              "correctAnswer": "%"
+          },
+          {
+              "question": "What is the result of 12 / 4?",
+              "options": ["3", "4", "6"],
+              "correctAnswer": "3"
+          },
+          {
+              "question": "In Kotlin, what is the use of the + operator?",
+              "options": ["Addition", "Subtraction", "Division"],
+              "correctAnswer": "Addition"
+          },
+          {
+              "question": "What is the value of 7 + 3 * 2 in Kotlin?",
+              "options": ["20", "13", "17"],
+              "correctAnswer": "13"
+          },
+          {
+              "question": "Which of the following is NOT a valid integer operation in Kotlin?",
+              "options": ["Addition", "Concatenation", "Division"],
+              "correctAnswer": "Concatenation"
+          }
+      ]
+  },
+  "module5": {
+      "questions": [
+          {
+              "question": "What keyword is used to define an else-if branch in Kotlin?",
+              "options": ["elseif", "else if", "else if (condition)"],
+              "correctAnswer": "else if (condition)"
+          },
+          {
+              "question": "What is the output of this code: if (5 > 3) { println(\"Yes\") }?",
+              "options": ["Yes", "No", "Nothing"],
+              "correctAnswer": "Yes"
+          },
+          {
+              "question": "Which statement can replace multiple if-else blocks in Kotlin?",
+              "options": ["switch", "when", "case"],
+              "correctAnswer": "when"
+          },
+          {
+              "question": "What happens if no case matches in a when block and no else branch is defined?",
+              "options": ["Kotlin throws a compile error.", "Kotlin throws a runtime error.", "It defaults to null."],
+              "correctAnswer": "Kotlin throws a compile error."
+          },
+          {
+              "question": "Which operator checks if a number is within a range?",
+              "options": ["in", "within", "=="],
+              "correctAnswer": "in"
+          },
+          {
+              "question": "Which loop is best for iterating over a fixed range of numbers?",
+              "options": ["for loop", "while loop", "do-while loop"],
+              "correctAnswer": "for loop"
+          },
+          {
+              "question": "What is the output of: when (5) { 4 -> println(\"Four\") 5 -> println(\"Five\") }?",
+              "options": ["Five", "Four", "Nothing"],
+              "correctAnswer": "Five"
+          },
+          {
+              "question": "How do you specify multiple cases in a when expression?",
+              "options": ["case 1, 2, 3:", "1, 2, 3 ->", "1 or 2 or 3:"],
+              "correctAnswer": "1, 2, 3 ->"
+          },
+          {
+              "question": "What is the purpose of the break statement in loops?",
+              "options": ["To exit the loop.", "To skip the next iteration.", "To end the program."],
+              "correctAnswer": "To exit the loop."
+          },
+          {
+              "question": "Which keyword skips the remaining code in the current loop iteration?",
+              "options": ["continue", "break", "skip"],
+              "correctAnswer": "continue"
+          }
+      ]
+  },
+  "module6": {
+      "questions": [
+          {
+              "question": "What keyword is used to define a function in Kotlin?",
+              "options": ["fun", "func", "define"],
+              "correctAnswer": "fun"
+          },
+          {
+              "question": "What is the return type of a function that does not return any value?",
+              "options": ["void", "null", "Unit"],
+              "correctAnswer": "Unit"
+          },
+          {
+              "question": "How do you call a function named myFunction in Kotlin?",
+              "options": ["myFunction()", "call myFunction", "invoke myFunction"],
+              "correctAnswer": "myFunction()"
+          },
+          {
+              "question": "What is the purpose of a return statement in a function?",
+              "options": ["To end the function and return a value.", "To print a value.", "To call another function."],
+              "correctAnswer": "To end the function and return a value."
+          },
+          {
+              "question": "Which symbol is used to specify default values for parameters?",
+              "options": ["=", ":", ","],
+              "correctAnswer": "="
+          },
+          {
+              "question": "Can a Kotlin function have multiple return statements?",
+              "options": ["Yes", "No", "Only with recursion"],
+              "correctAnswer": "Yes"
+          },
+          {
+              "question": "What is the syntax to define a single-expression function?",
+              "options": ["fun name = expression", "fun name() = expression", "fun name { expression }"],
+              "correctAnswer": "fun name() = expression"
+          },
+          {
+              "question": "How do you specify the return type of a function?",
+              "options": [": Type", "-> Type", "= Type"],
+              "correctAnswer": ": Type"
+          },
+          {
+              "question": "What is an inline function?",
+              "options": ["A function defined within a class.", "A function that avoids object allocation by inlining calls.", "A single-expression function."],
+              "correctAnswer": "A function that avoids object allocation by inlining calls."
+          },
+          {
+              "question": "What is a lambda function in Kotlin?",
+              "options": ["An anonymous function.", "A function with a return value.", "A function with default parameters."],
+              "correctAnswer": "An anonymous function."
+          }
+      ]
+  },
     "module7": {
       "questions": [
         {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 5: Control Flow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Kotlin Tutorial</h1>
+        <ul>
+            <li><a href="index.html#module4">Module 4: Integer Operations</a></li>
+            <li><a href="index.html#module5">Module 5: Control Flow</a></li>
+            <li><a href="index.html#module6">Module 6: Functions and Return Types</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Quiz 5: Control Flow</h2>
+        <div id="quiz-5"></div>
+        <div id="quiz-5-result"></div>
+        <script src="script.js"></script>
+        <script>
+            // Load only the quiz related to Module 5
+            fetch('quizzes.json')
+                .then(response => response.json())
+                .then(data => {
+                    generateQuiz(data.module5.questions, 'quiz-5');
+                });
+        </script>
+    </div>
+</body>
+</html>

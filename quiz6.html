@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz 6: Functions and Return Types</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="sidebar">
+        <h1>Kotlin Tutorial</h1>
+        <ul>
+            <li><a href="index.html#module4">Module 4: Integer Operations</a></li>
+            <li><a href="index.html#module5">Module 5: Control Flow</a></li>
+            <li><a href="index.html#module6">Module 6: Functions and Return Types</a></li>
+        </ul>
+    </div>
+    <div class="content">
         <h2>Quiz 6: Functions and Return Types</h2>
         <div id="quiz-6"></div>
-        <div id="quiz-6-result" class="result"></div>
-        <div class="progress-bar-container">
-            <div id="progress-bar-6" class="progress-bar"></div>
-            <nav><a href="index.html">Back to Tutorial</a></nav>
-        </div>
+        <div id="quiz-6-result"></div>
+        <script src="script.js"></script>
+        <script>
+            // Load only the quiz related to Module 6
+            fetch('quizzes.json')
+                .then(response => response.json())
+                .then(data => {
+                    generateQuiz(data.module6.questions, 'quiz-6');
+                });
+        </script>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
