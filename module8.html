@@ -1,11 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Module 8: Inheritance</title>
+    </head>
+    <body>
+        <a href="index.html" class="back-to-main">Return to Main Page</a>
+        <h1>Module 8: Inheritance</h1>
+
+        <div>
+            <h2>Introduction</h2>
+            In Kotlin, inheritance can be done by either using an abstract class
+            or by using an open class.
+        </div>
+
+        <div>
+            <h2>Syntax</h2>
+            <p>
+                When it comes to implementing inheritance using an open class,
+                it can be done like this:
+            </p>
+
+            <iframe src="https://pl.kotl.in/I9Pe_k9RA?theme=darcula"></iframe>
+
+            <p>
+                Each individual method and property that one wants to allow to
+                be overrideable needs to use the open keyword or else it will be
+                final and cannot be extended by the subclasses.
+            </p>
+
+            <p>
+                Whenever one is implementing methods or properties in an
+                abstract class in a subclass, one needs to use the override
+                keyword on those properties and methods to implement that they
+                are to be implemented.
+            </p>
+
+            <iframe src="https://pl.kotl.in/oQgzHXiUe?theme=darcula"></iframe>
+        </div>
+
+        <div>
+            <h2>Advantages and disadvantages</h2>
+            <p>
+                Unlike C++, Kotlin does not support multiple inheritance and
+                thus a class can only inherit from one class.
+            </p>
+
+            <p>
+                One of the advantages of inheritance is that one can easily
+                moden an is-a relationship where different classes can be part
+                of a category which can then share common properties that can be
+                worked with.
+            </p>
+
+            <p>
+                However, one of the issues with using inheritance in Kotlin is
+                that classes are final by default in Kotlin, meaning that these
+                classes cannot be extended or used as superclasses. If a class
+                is to be used as a superclass, it would need to use the abstract
+                keyword for abstract classes or if it is a concrete class, it
+                would need to use the open keyword. The individual properties of
+                the classes must also use the open keyword in order to be
+                overrideable.
+            </p>
+
+            <p>
+                Moreover, another issue with inheritance in Kotlin and in other
+                programming languages is that changing a superclass can involve
+                the changing of many other subclasses; for example, if one has
+                an entity class for a game and there are many subclasses that
+                inherit from the entity class and one changes the entity class,
+                one would also need to make changes to all the other classes
+                that also inherit from the entity class.
+            </p>
+
+            <p>
+                Another pressing issue with abstract classes is the diamond
+                problem, an issue that happens in classes that support multiple
+                inheritance such as C++ where a class that inherits from
+                multiple superclasses can have the two or more superclasses
+                contain properties and methods with conflicting definitions.
+            </p>
+        </div>
+        <form action="quiz8.html">
+            <input class="quizButton" type="submit" value="Go to quiz" />
+        </form>
+    </body>
 </html>
