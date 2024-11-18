@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Module 10: Traits</title>
+    </head>
+    <body>
+        <a href="index.html" class="back-to-main">Return to Main Page</a>
+        <h1>Module 10: Traits</h1>
+        <div>
+            <h2>Introduction</h2>
+            <p>
+                Traits are common properties that classes are meant to
+                implement.
+            </p>
+        </div>
+
+        <div>
+            <h2>Syntax</h2>
+            <p>
+                In Kotlin, traits are implemented using the interface keyword,
+                similarly to how Java also implements traits through the
+                interface keyword.
+            </p>
+
+            <p>
+                Traits in Kotlin can have predefined definitions of functions
+                that can be implemented by other classes or can be overridden by
+                classes that implement a trait.
+            </p>
+
+            <p>
+                Classes in Kotlin can also implement multiple traits, which is
+                unlike the case with inheritance in Kotlin where a subclass can
+                extend only one superclass.
+            </p>
+
+            <iframe
+                src="https://pl.kotl.in/d2V-TAg52?readOnly=true&theme=darcula"
+            ></iframe>
+
+            <p>
+                Traits in Kotlin can also have properties to them that can be
+                implemented by classes.
+            </p>
+
+            <p>
+                Traits in Kotlin can also be subtraits of other supertraits,
+                similarly to how a superclass can have subclasses.
+            </p>
+
+            <p>
+                Combining composition with traits can also allow us to create
+                even more modular classes that can use components that share a
+                common trait but implement that trait differently.
+            </p>
+
+            <iframe
+                src="https://pl.kotl.in/9jKPaTfod?readOnly=true&theme=darcula"
+            ></iframe>
+
+            <p>
+                By having the name property be any object that implements the
+                trait Name, we are able to store a greate variety of data types
+                and build classes that have more variations in their properties.
+            </p>
+        </div>
+
+        <div>
+            <h2>Advantages and disadvantages</h2>
+
+            <p>
+                One of the advantages of traits is that one can break up the
+                properties of superclasses into individual traits that implement
+                different methods and properties. What this allows a programmer
+                to do is to be able to write more modular code where one can
+                choose which classes will implement which trait without having
+                to worry about needing to create another superclass or having to
+                modify a superclass due to a subclasss that is an exception that
+                may need to have a method or property added or removed.
+            </p>
+
+            <p>
+                One of the issues with traits is that they, like inheritance,
+                also have the diamond problem where if multiple traits have a
+                function with the same name but a different implementation,
+                attempting to implement multiple traits with functions that have
+                the same name but different definitions can create conflicts
+                when defining a class that implements those traits.
+            </p>
+
+            <p>
+                Another issue with traits is that one can create so many traits
+                that there is increased complexity with implementing multiple
+                classes that have common traits where one may need to implement
+                a large amount of traits and ensure that each trait is
+                implemented when creating a class.
+            </p>
+        </div>
+        <form action="quiz10.html">
+            <input class="quizButton" type="submit" value="Go to quiz" />
+        </form>
+    </body>
+</html>
