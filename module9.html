@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Module 9: Composition</title>
+    </head>
+    <body>
+        <a href="index.html" class="back-to-main">Return to Main Page</a>
+        <h1>Module 9: Composition</h1>
+        <div>
+            <h2>Introduction</h2>
+            <p>
+                Composition is the creation of more complex data structures
+                using simpler data structures such as smaller classes with fewer
+                properties. Rather than using inheritance where multiple
+                subclasses inherit the methods and properties of a superclass,
+                the subclasses can instead be made up of different components
+                that can contain the properties that would have been in a
+                superclass.
+            </p>
+        </div>
+
+        <div>
+            <h2>Syntax</h2>
+
+            <p>
+                One good example of using composition to make the creation of
+                complex classes simpler would be to create a person class that
+                has an Int id, a separate name class for defining the format of
+                a name, and localdate class for the birthdate.
+            </p>
+
+            <p>
+                By breaking up the person class into a name class, we can make
+                it easier to manage different properties such as how to define
+                the format for a name. Using a separate name class allows us to
+                manage the properties of the composite person class where we
+                need to change only the code that uses the individual property,
+                the Name class, rather than having to change the entire Person
+                class. We can also grab that same person class and use it as a
+                property of another class such as the student class.
+            </p>
+
+            <iframe
+                src="https://pl.kotl.in/mWyJ29BWl?readOnly=true&theme=darcula"
+            ></iframe>
+        </div>
+
+        <div>
+            <h2>Advantages and disadvantages</h2>
+            <p>
+                One of the advantages of using composition over traits is that
+                if one wished to make a change to the composite class, one can
+                simply change the individual part or parts to change the
+                properties rather than needing to change the entire class if the
+                properties have been propertly modularized.
+            </p>
+
+            <p>
+                One of the disadvantages of composition however is that the more
+                complex a class becomes with even the properties being composite
+                classes that are part of a more complex composite class, the
+                more difficult and meticulous the implementation and use of
+                these classes will become. For example, if we were to add an
+                Address property to the person class, we would need to construct
+                not only the name class but also the address class and add these
+                properties to the person class before we use the person clas to
+                create the student class. One would need to create layers of
+                class constructors in order to create a composite class that
+                uses many properties.
+            </p>
+
+            <p>
+                When it comes to whether to use inheritance or composition, one
+                should lean towards using composition when possible; however,
+                there are cases where inheritance would simplify the
+                implementation of classes; thus, one would need to use a mix of
+                inheritance and composition and traits rather than abandoning
+                inheritance altogether and attempting to create everything using
+                composition and traits.
+            </p>
+        </div>
+        <form action="quiz9.html">
+            <input class="quizButton" type="submit" value="Go to quiz" />
+        </form>
+    </body>
+</html>
