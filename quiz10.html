@@ -1,21 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz 10: Traits</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Quiz 10 - Traits</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Quiz 10: Traits</h2>
-        <div id="quiz-10"></div>
-        <div id="quiz-10-result" class="result"></div>
-        <div class="progress-bar-container">
-            <div id="progress-bar-10" class="progress-bar"></div>
-            <nav><a href="index.html">Back to Tutorial</a></nav>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <a href="index.html" class="back-to-main">Return to Main Page</a>
+    <h1>Quiz 10 - Traits</h1>
+    <h4>You must get a 100% on this quiz to move on to the next lesson!</h4>
+    <div id="quiz"></div>
+    <button id="submit" class="submitQuizButton">Submit</button>
+    <div id="results" class="score"></div>
+    <form action="module11.html" id="nextLessonForm" style="display: none;">
+        <input class="quizButton" type="submit" value="Next Lesson"/>
+    </form>
+    <script>
+        var myQuestions = [
+    
+];
+
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+	function showQuestions(questions, quizContainer){
+		// we'll need a place to store the output and the answer choices
+		var output = [];
+		var answers;
+
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+			
+			// first reset the list of answers
+			answers = [];
+
+			// for each available answer...
+			for(letter in questions[i].answers){
+
+				// ...add an html radio button
+				answers.push( 
+					'<label>'
+						+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+						+ letter + ': '
+						+ questions[i].answers[letter]
+					+ '</label>'
+                    +'<br>'
+				);
+			}
+
+			// add this question and its answers to the output
+			output.push(
+				'<h3 class="question">' + questions[i].question + '</h3>'
+				+ '<div class="answers">' + answers.join('') + '</div>'
+			);
+		}
+
+		// finally combine our output list into one string of html and put it on the page
+		quizContainer.innerHTML = output.join('');
+	}
+
+
+    function showResults(questions, quizContainer, resultsContainer) {
+    // Gather answer containers from our quiz
+    var answerContainers = quizContainer.querySelectorAll('.answers');
+    
+    // Keep track of the number of correct answers
+    var numCorrect = 0;
+    
+    // For each question...
+    for (var i = 0; i < questions.length; i++) {
+        // Find the selected answer
+        var selectedOption = answerContainers[i].querySelector('input[name=question' + i + ']:checked');
+        
+        // Proceed only if an option is selected for the question
+        if (selectedOption) {
+            var userAnswer = selectedOption.value;
+
+            // Check if the selected answer is correct
+            if (userAnswer === questions[i].correctAnswer) {
+                // Correct answer: highlight only the selected option in green
+                selectedOption.parentElement.style.color = 'lightgreen';
+                numCorrect++; // Increment correct answers count
+            } else {
+                // Incorrect answer: highlight only the selected option in red
+                selectedOption.parentElement.style.color = 'red';
+            }
+        }
+    }
+
+    // Show the number of correct answers out of the total
+    resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+    
+    // Display the "next lesson" form if all answers are correct
+    if (numCorrect === questions.length) {
+        document.getElementById("nextLessonForm").style.display = "block";
+    }
+}
+
+
+
+	// show questions right away
+	showQuestions(questions, quizContainer);
+	
+	// on submit, show results
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+	}
+
+}
+    </script>
 </body>
 </html>
