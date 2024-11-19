@@ -355,4 +355,39 @@
         }
       ]
     }
+  "module11": {
+    "questions": [
+      {
+        "question": "How is a lambda expression formatted?".
+        "options": [
+          "{ it.toString() }", 
+          "{ it -> it.toString() }", 
+          "{ it : Int -> it.toString() }", 
+          "All of the above"
+        ],
+        "correctAnswer": "All of the above"
+      },
+      {
+        "question": "If we want to store a lambda expression in a variable, which of the following is correct?",
+        "options": [
+          "val double: (Int) -> Int = { it * 2 }",
+          "val double = { n * 2 }",
+        ],
+        "correctAnswer": "val double: (Int) -> Int = { it * 2 }"
+      },
+      {
+        "question": "True or false: Lambda functions can have multiple operations.",
+        "options": ["True", "False"],
+        "correctAnswer": "True"
+      }
+      {
+        "question": "How do we change the name of the variable to be used in the lambda expression?",
+        "options": [
+          "{ n -> n * 2 }",
+          "{ n * 2 }"
+        ],
+        "correctAnswer": "{ n -> n * 2 }"
+      }
+    ]
+  }
 }
