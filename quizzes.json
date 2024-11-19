@@ -334,7 +334,7 @@
           "question": "What is the syntax used in Kotlin for implementing traits?",
           "options": ["interface TraitName", "interface TraitName []", "trait TraitName {}"],
           "correctAnswer": "interface TraitName"
-        }
+        },
         {
           "question": "Which of the following are benefits of implementing traits?",
           "options": [
@@ -342,12 +342,12 @@
             "It is just another way to implement a superclass without the need for a constructor."
           ],
           "correctAnswer": "Greater modularity: a superclass can be broken up into multiple traits that can be implemented individually."
-        }
+        },
         {
           "question": "True or false: traits are extendable like classes can be extendable",
           "options": ["True", "False"],
           "correctAnswer": "True"
-        }
+        },
         {
           "question": "True of False: traits lack the diamond problem that inheritance has?",
           "options": ["True", "False"],
@@ -379,7 +379,7 @@
         "question": "True or false: Lambda functions can have multiple operations.",
         "options": ["True", "False"],
         "correctAnswer": "True"
-      }
+      },
       {
         "question": "How do we change the name of the variable to be used in the lambda expression?",
         "options": [
@@ -387,6 +387,27 @@
           "{ n * 2 }"
         ],
         "correctAnswer": "{ n -> n * 2 }"
+      }
+    ]
+  }
+  "module12": {
+    "questions": [
+      {
+        "question": "How can we construct the base cases and recursive calls of a recursive function?",
+        "options": ["If-else statements", "Pattern matching", "All of the above"],
+        "correctAnswer": "All of the above"
+      },
+      {
+        "question": "What does 'fun fact(n : Int) = if (n <= 1) 1 else n * fact(n - 1)' do?",
+        "options": [
+          "If n is less than or equal to one, return 1 else multiply n * fact(n - 1)", 
+          "We multiply n by fact(n - 1) until n is equal to one."],
+        "correctAnswer": "If n is less than or equal to one, return 1 else multiply n * fact(n - 1)"
+      },
+      {
+        "question": "True or false: functions that can be written iteratively can also be efficiently done recursively",
+        "options": ["True", "False"],
+        "correctAnswer": "False" 
       }
     ]
   }
