@@ -328,4 +328,31 @@
         }
       ]
     }
+    "module10": {
+      "questions": [
+        {
+          "question": "What is the syntax used in Kotlin for implementing traits?",
+          "options": ["interface TraitName", "interface TraitName []", "trait TraitName {}"],
+          "correctAnswer": "interface TraitName"
+        }
+        {
+          "question": "Which of the following are benefits of implementing traits?",
+          "options": [
+            "Greater modularity: a superclass can be broken up into multiple traits that can be implemented individually.",
+            "It is just another way to implement a superclass without the need for a constructor."
+          ],
+          "correctAnswer": "Greater modularity: a superclass can be broken up into multiple traits that can be implemented individually."
+        }
+        {
+          "question": "True or false: traits are extendable like classes can be extendable",
+          "options": ["True", "False"],
+          "correctAnswer": "True"
+        }
+        {
+          "question": "True of False: traits lack the diamond problem that inheritance has?",
+          "options": ["True", "False"],
+          "correctAnswer": "False",
+        }
+      ]
+    }
 }
