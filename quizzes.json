@@ -358,7 +358,7 @@
   "module11": {
     "questions": [
       {
-        "question": "How is a lambda expression formatted?".
+        "question": "How is a lambda expression formatted?",
         "options": [
           "{ it.toString() }", 
           "{ it -> it.toString() }", 
